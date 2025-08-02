@@ -34,7 +34,7 @@ public class AddTransactionServlet extends HttpServlet {
             stmt.setString(6, note);
 
             stmt.executeUpdate();
-            response.sendRedirect("dashboard.jsp");
+            response.sendRedirect("dashboard.jsp?month=" + date.split("-")[1] + "&year=" + date.split("-")[0]);
         } catch (Exception e) {
             e.printStackTrace();
         }

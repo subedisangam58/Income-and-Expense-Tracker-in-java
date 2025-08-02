@@ -79,7 +79,7 @@
         }
         button {
             margin-top: 20px;
-            width: 100%;
+            width: 48%;
             background-color: #007bff;
             color: white;
             border: none;
@@ -91,29 +91,71 @@
         button:hover {
             background-color: #0056b3;
         }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        #password-section {
+            display: none;
+        }
     </style>
+    <script>
+        function enableEdit() {
+            document.getElementById('username').disabled = false;
+            document.getElementById('email').disabled = false;
+            document.getElementById('phone').disabled = false;
+            document.getElementById('password-section').style.display = 'block';
+            document.getElementById('saveButton').style.display = 'inline-block';
+        }
+
+        function cancelEdit() {
+            location.reload();
+        }
+
+        function validatePasswords() {
+            const pwd = document.getElementById('password').value;
+            const confirmPwd = document.getElementById('confirmPassword').value;
+            if (pwd !== confirmPwd) {
+                alert('Passwords do not match.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
     <jsp:include page="sidebar.jsp" />
+
     <div class="main-content">
         <div class="form-card">
             <h2>Update Profile</h2>
-            <form action="UpdateProfileServlet" method="post">
+            <form action="UpdateProfileServlet" method="post" onsubmit="return validatePasswords()">
                 <label>Username:</label>
-                <input type="text" name="username" value="<%= currentUsername %>" required />
+                <input type="text" id="username" name="username" value="<%= currentUsername %>" disabled required />
 
                 <label>Email:</label>
-                <input type="email" name="email" value="<%= currentEmail %>" required />
+                <input type="email" id="email" name="email" value="<%= currentEmail %>" disabled required />
 
                 <label>Phone:</label>
-                <input type="text" name="phone" value="<%= currentPhone %>" required />
+                <input type="text" id="phone" name="phone" value="<%= currentPhone %>" disabled required />
 
-                <label>New Password (optional):</label>
-                <input type="password" name="password" />
+                <div id="password-section">
+                    <label>New Password (optional):</label>
+                    <input type="password" id="password" name="password" />
 
-                <button type="submit">Update Profile</button>
+                    <label>Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" />
+                </div>
+
+                <div class="button-group">
+                    <button type="button" onclick="enableEdit()">Update Profile</button>
+                    <button type="button" onclick="cancelEdit()">Cancel</button>
+                </div>
+
+                <button type="submit" style="margin-top: 15px; display: none;" id="saveButton">Save Changes</button>
             </form>
         </div>
     </div>
+
 </body>
 </html>

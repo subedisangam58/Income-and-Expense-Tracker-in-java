@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/web/sidebar.jsp</file>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/web/register.jsp</file>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/src/java/utils/UpdateProfileServlet.java</file>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/web/add_transaction.jsp</file>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/src/java/utils/AddTransactionServlet.java</file>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/web/dashboard.jsp</file>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/web/index.jsp</file>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/web/profile.jsp</file>
+            <file>file:/D:/Java%20Program/IncomeAndExpenseTracker/web/IncomeExpensePrediction.jsp</file>
+        </group>
     </open-files>
 </project-private>
